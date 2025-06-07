@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi-proyecto-web</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body class="bg-gray-100">
+<!-- - Header con navegación hacia todas las páginas -->
+    <header
+      class="bg-gradient-to-r from-[#0040ff] to-white p-4 sticky top-0 z-50"
+    >
+      <!-- menu de navegacion -->
+      <nav class="bg-white shadow-lg bg-white">
+        <div class="max-w-8xl mr-2 px-6">
+          <div class="flex justify-between">
+            <div class="flex">
+              <div>
+                <a href="index.html" class="flex items-center py-4">
+                  <span class="font-semibold text-gray-500 text-lg">
+                    <h1 class="text-1xl font-bold text-black">
+                      Mi Portafolio Web
+                    </h1>
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <!-- imagen de el logo de la martin lutero -->
+            <a
+              href="https://ocotal.uml.edu.ni"
+              class="img_nav"
+              title="Universidad Martin Lutero"
+            >
+              <img src="./assets/svg/DW.png" alt="" />
+            </a>
+            <!-- menu de vista en pc o pantallas grandes -->
+            <div class="hidden md:flex items-center">
+              <a
+                href="index.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300"
+                >Inicio</a
+              >
+              <div class="relative group">
+                <!-- boton desplegable para visualisar todas las practicas -->
+                <button
+                  id="buttompracticadropdown"
+                  class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300"
+                >
+                  Practicas
+                  <svg
+                    class="h-4 w-4 inline-block ml-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
+                </button>
+                <div
+                  id="menupracticas"
+                  class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden"
+                >
+                  <a
+                    href="/pages/formularios.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >Formularios</a
+                  >
+                  <a
+                    href="/pages/listas.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >Listas</a
+                  >
+                  <a
+                    href="/pages/tablas.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >Tablas</a
+                  >
+                  <a
+                    href="/pages/semantica.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >Semantica</a
+                  >
+                  <a
+                    href="/pages/multimedia.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >Multimedia</a
+                  >
+                </div>
+              </div>
+              <a
+                href="/pages/contacto.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300"
+                >Contacto</a
+              >
+            </div>
+            <!-- menu de vista mobil -->
+
+            <!-- boton de despliege para ver el menu movil -->
+            <div class="md:hidden flex items-center">
+              <button class="mobile-menu-button">
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="mobile-menu hidden md:hidden">
+          <a href="index.html" class="block py-2 px-4 text-sm hover:bg-gray-200"
+            >Inicio</a
+          >
+          <div class="relative group">
+            <!-- boton desplegable para visualisar todas las practicas -->
+            <button
+              class="mobile-submenu-button w-full text-left block py-2 px-4 text-sm hover:bg-gray-200"
+            >
+              Practicas
+              <svg
+                class="h-4 w-4 inline-block ml-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div class="mobile-submenu hidden bg-gray-100">
+              <a
+                href="/pages/formularios.html"
+                class="block py-2 px-4 text-sm hover:bg-gray-200"
+                >Formularios</a
+              >
+              <a
+                href="/pages/listas.html"
+                class="block py-2 px-4 text-sm hover:bg-gray-200"
+                >Listas</a
+              >
+              <a
+                href="/pages/tablas.html"
+                class="block py-2 px-4 text-sm hover:bg-gray-200"
+                >Tablas</a
+              >
+              <a
+                href="/pages/semantica.html"
+                class="block py-2 px-4 text-sm hover:bg-gray-200"
+                >Semantica</a
+              >
+              <a
+                href="/pages/multimedia.html"
+                class="block py-2 px-4 text-sm hover:bg-gray-200"
+                >Multimedia</a
+              >
+            </div>
+          </div>
+          <a
+            href="/pages/contacto.html"
+            class="block py-2 px-4 text-sm hover:bg-gray-200"
+            >Contacto</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main class="container mx-auto mt-8 p-4">
+        <h1 class="text-4xl font-bold text-center mb-8">Contactanos</h1>
+
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="w-full md:w-1/2">
+                <form class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="mb-3">
+                        <label for="name" class="block text-gray-700 font-bold mb-2">Nombre</label>
+                        <input type="text" id="name" name="name" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="block text-gray-700 font-bold mb-2">Correo electronico</label>
+                        <input type="email" id="email" name="email" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="block text-gray-700 font-bold mb-2">Mensaje</label>
+                        <textarea id="message" name="message" rows="1" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required></textarea>
+                    </div>
+                    <button type="submit" class="bg-primary px-4 py-2 rounded-full text-white bg-green-600 ">Enviar mensaje</button>
+                </form>
+            </div>
+            <div class="w-full md:w-1/2">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold mb-4">Informacion de contacto</h2>
+                    <div class="space-y-4">
+                        <p><i class="fas fa-map-marker-alt text-accent mr-2"></i> 1800-El Jicaro, Nueva Segovia</p>
+                        <p><i class="fas fa-phone text-accent mr-2"></i> +505 8435-5079</p>
+                        <p><i class="fas fa-envelope text-accent mr-2"></i> info@NeyzerBellorin.com</p>
+                    </div>
+                    <h3 class="text-xl font-bold mt-6 mb-2">horario de atencion</h3>
+                    <ul class="space-y-2">
+                        <li>Lunes - Viernes: 9:00 AM - 11:00 PM</li>
+                        <li>Sabado: 3:00 pM - 8:00 PM</li>
+                        <li>6:00AM - 11:00PM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 mt-1">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Mi-proyecto-web Todos los derechos reservados.</p>
+            <div class="mt-1 flex justify-center space-x-4">
+                <a href="#" class="hover:text-accent transition duration-300"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-accent transition duration-300"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-accent transition duration-300"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+ 
+    <script>
+        // menu de mobil y submenu
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const mobileSubmenuButton = document.querySelector('.mobile-submenu-button');
+        const mobileSubmenu = document.querySelector('.mobile-submenu');
+        mobileSubmenuButton.addEventListener('click', () => {
+            mobileSubmenu.classList.toggle('hidden');
+        });
+
+        const buttompracticadropdown = document.getElementById('buttompracticadropdown');
+        const menupracticas = document.getElementById('menupracticas');
+        let ispracticasactive = false;
+
+        buttompracticadropdown.addEventListener('click', (e) => {
+            e.preventDefault();
+            ispracticasactive = !ispracticasactive;
+            menupracticas.classList.toggle('hidden');
+            buttompracticadropdown.classList.toggle('text-blue-500');
+            buttompracticadropdown.classList.toggle('bg-gray-100');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!buttompracticadropdown.contains(e.target) && !menupracticas.contains(e.target)) {
+                menupracticas.classList.add('hidden');
+                buttompracticadropdown.classList.remove('text-blue-500', 'bg-gray-100');
+                ispracticasactive = false;
+            }
+        });
+
+    
+  </script>
+</body>
+
+
+</html>

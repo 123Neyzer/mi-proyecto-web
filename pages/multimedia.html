@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Galería Multimedia</title>
+
+   <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/styles/main.css">
+    
+</head>
+<body>
+    <!-- - Header con navegación hacia todas las páginas -->
+    <header
+      class="bg-gradient-to-r from-[#0040ff] to-white p-4 sticky top-0 z-50"
+    >
+      <!-- menu de navegacion -->
+      <nav class="bg-white shadow-lg bg-white">
+        <div class="max-w-8xl mr-2 px-6">
+          <div class="flex justify-between">
+            <div class="flex">
+              <div>
+                <a href="index.html" class="flex items-center py-4">
+                  <span class="font-semibold text-gray-500 text-lg">
+                    <h1 class="text-1xl font-bold text-black">
+                      Mi Portafolio Web
+                    </h1>
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <!-- imagen de el logo de la martin lutero -->
+            <a
+              href="https://ocotal.uml.edu.ni"
+              class="img_nav"
+              title="Universidad Martin Lutero"
+            >
+              <img src="./assets/svg/DW.png" alt="" />
+            </a>
+            <!-- menu de vista en pc o pantallas grandes -->
+            <div class="hidden md:flex items-center">
+              <a
+                href="index.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300"
+                >Inicio</a
+              >
+              <div class="relative group">
+                <!-- boton desplegable para visualisar todas las practicas -->
+                <button
+                  id="buttompracticadropdown"
+                  class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300"
+                >
+                  Practicas
+                  <svg
+                    class="h-4 w-4 inline-block ml-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
+                </button>
+                <div
+                  id="menupracticas"
+                  class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden"
+                >
+                  <a
+                    href="/pages/formularios.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >Formularios</a
+                  >
+                  <a
+                    href="/pages/listas.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >Listas</a
+                  >
+                  <a
+                    href="/pages/tablas.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >Tablas</a
+                  >
+                  <a
+                    href="/pages/semantica.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >Semantica</a
+                  >
+                  <a
+                    href="/pages/multimedia.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >Multimedia</a
+                  >
+                </div>
+              </div>
+              <a
+                href="/pages/contacto.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300"
+                >Contacto</a
+              >
+            </div>
+            <!-- menu de vista mobil -->
+
+            <!-- boton de despliege para ver el menu movil -->
+            <div class="md:hidden flex items-center">
+              <button class="mobile-menu-button">
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="mobile-menu hidden md:hidden">
+          <a href="index.html" class="block py-2 px-4 text-sm hover:bg-gray-200"
+            >Inicio</a
+          >
+          <div class="relative group">
+            <!-- boton desplegable para visualisar todas las practicas -->
+            <button
+              class="mobile-submenu-button w-full text-left block py-2 px-4 text-sm hover:bg-gray-200"
+            >
+              Practicas
+              <svg
+                class="h-4 w-4 inline-block ml-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div class="mobile-submenu hidden bg-gray-100">
+              <a
+                href="/pages/formularios.html"
+                class="block py-2 px-4 text-sm hover:bg-gray-200"
+                >Formularios</a
+              >
+              <a
+                href="/pages/listas.html"
+                class="block py-2 px-4 text-sm hover:bg-gray-200"
+                >Listas</a
+              >
+              <a
+                href="/pages/tablas.html"
+                class="block py-2 px-4 text-sm hover:bg-gray-200"
+                >Tablas</a
+              >
+              <a
+                href="/pages/semantica.html"
+                class="block py-2 px-4 text-sm hover:bg-gray-200"
+                >Semantica</a
+              >
+              <a
+                href="/pages/multimedia.html"
+                class="block py-2 px-4 text-sm hover:bg-gray-200"
+                >Multimedia</a
+              >
+            </div>
+          </div>
+          <a
+            href="/pages/contacto.html"
+            class="block py-2 px-4 text-sm hover:bg-gray-200"
+            >Contacto</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <div class="multimedia-container">
+        <h1 class="multimedia-title">Galería Multimedia</h1>
+
+        <!-- Navegación de pestañas -->
+        <div class="tab-navigation">
+            <button class="tab-button active" data-tab="images">📷 Imágenes</button>
+            <button class="tab-button" data-tab="videos">🎥 Videos</button>
+            <button class="tab-button" data-tab="audios">🎵 Audios</button>
+        </div>
+
+        <!-- Sección de Imágenes -->
+        <div class="content-section active" id="images-section">
+            <div class="filter-section">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Todas</button>
+                    <button class="filter-btn" data-filter="naturaleza">Naturaleza</button>
+                    <button class="filter-btn" data-filter="arquitectura">Arquitectura</button>
+                    <button class="filter-btn" data-filter="retratos">Retratos</button>
+                    <button class="filter-btn" data-filter="paisajes">Paisajes</button>
+                </div>
+            </div>
+
+            <div class="media-grid">
+                <div class="media-card" data-category="naturaleza">
+                    <div class="media-content">
+                        <img src="https://picsum.photos/400/300?random=1" alt="Bosque Encantado">
+                    </div>
+                    <div class="media-info">
+                        <h3 class="media-title">Bosque Encantado</h3>
+                        <p class="media-description">Un hermoso bosque al amanecer con rayos de sol filtrándose entre los árboles</p>
+                        <div class="media-meta">
+                            <span class="media-category">Naturaleza</span>
+                            <span>2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media-card" data-category="arquitectura">
+                    <div class="media-content">
+                        <img src="https://picsum.photos/400/300?random=2" alt="Arquitectura Moderna">
+                    </div>
+                    <div class="media-info">
+                        <h3 class="media-title">Arquitectura Moderna</h3>
+                        <p class="media-description">Diseño contemporáneo urbano con líneas limpias y geometría perfecta</p>
+                        <div class="media-meta">
+                            <span class="media-category">Arquitectura</span>
+                            <span>2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media-card" data-category="paisajes">
+                    <div class="media-content">
+                        <img src="https://picsum.photos/400/300?random=3" alt="Montañas Majestuosas">
+                    </div>
+                    <div class="media-info">
+                        <h3 class="media-title">Montañas Majestuosas</h3>
+                        <p class="media-description">Vista panorámica de montañas cubiertas de nieve al atardecer</p>
+                        <div class="media-meta">
+                            <span class="media-category">Paisajes</span>
+                            <span>2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media-card" data-category="retratos">
+                    <div class="media-content">
+                        <img src="https://picsum.photos/400/300?random=4" alt="Retrato Artístico">
+                    </div>
+                    <div class="media-info">
+                        <h3 class="media-title">Retrato Artístico</h3>
+                        <p class="media-description">Expresión y emoción capturada en un momento único</p>
+                        <div class="media-meta">
+                            <span class="media-category">Retratos</span>
+                            <span>2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Videos -->
+        <div class="content-section" id="videos-section">
+            <div class="filter-section">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="documentales">Documentales</button>
+                    <button class="filter-btn" data-filter="tutoriales">Tutoriales</button>
+                    <button class="filter-btn" data-filter="entretenimiento">Entretenimiento</button>
+                </div>
+            </div>
+
+            <div class="media-grid">
+                <div class="media-card" data-category="documentales">
+                    <div class="media-content">
+                        <video poster="https://picsum.photos/400/300?random=10">
+                            <source src="/assets/videos/documental1.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento video.
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button">▶</div>
+                        </div>
+                    </div>
+                    <div class="media-info">
+                        <h3 class="media-title">Naturaleza Salvaje</h3>
+                        <p class="media-description">Documental sobre la vida silvestre en los bosques tropicales</p>
+                        <div class="media-meta">
+                            <span class="media-category">Documentales</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media-card" data-category="tutoriales">
+                    <div class="media-content">
+                        <video poster="https://picsum.photos/400/300?random=11">
+                            <source src="/assets/videos/tutorial1.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento video.
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button">▶</div>
+                        </div>
+                    </div>
+                    <div class="media-info">
+                        <h3 class="media-title">Tutorial de Fotografía</h3>
+                        <p class="media-description">Aprende técnicas básicas de composición fotográfica</p>
+                        <div class="media-meta">
+                            <span class="media-category">Tutoriales</span>
+                            <span>8:45 min</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media-card" data-category="entretenimiento">
+                    <div class="media-content">
+                        <video poster="https://picsum.photos/400/300?random=12">
+                            <source src="/assets/videos/entretenimiento1.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento video.
+                        </video>
+                        <div class="video-overlay">
+                            <div class="play-button">▶</div>
+                        </div>
+                    </div>
+                    <div class="media-info">
+                        <h3 class="media-title">Aventuras Urbanas</h3>
+                        <p class="media-description">Explorando los rincones más interesantes de la ciudad</p>
+                        <div class="media-meta">
+                            <span class="media-category">Entretenimiento</span>
+                            <span>12:20 min</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Audios -->
+        <div class="content-section" id="audios-section">
+            <div class="filter-section">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="musica">Música</button>
+                    <button class="filter-btn" data-filter="podcasts">Podcasts</button>
+                    <button class="filter-btn" data-filter="efectos">Efectos</button>
+                </div>
+            </div>
+
+            <div class="media-grid">
+                <div class="media-card" data-category="musica">
+                    <div class="media-content">
+                        <div class="audio-player">
+                            <div class="audio-icon">🎵</div>
+                            <div class="audio-title">Melodía Relajante</div>
+                            <audio class="audio-controls" controls>
+                                <source src="/assets/audios/melodia1.mp3" type="audio/mpeg">
+                                Tu navegador no soporta el elemento audio.
+                            </audio>
+                        </div>
+                    </div>
+                    <div class="media-info">
+                        <h3 class="media-title">Melodía Relajante</h3>
+                        <p class="media-description">Música instrumental perfecta para relajación y meditación</p>
+                        <div class="media-meta">
+                            <span class="media-category">Música</span>
+                            <span>4:32 min</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media-card" data-category="podcasts">
+                    <div class="media-content">
+                        <div class="audio-player">
+                            <div class="audio-icon">🎙️</div>
+                            <div class="audio-title">Tech Talk</div>
+                            <audio class="audio-controls" controls>
+                                <source src="/assets/audios/podcast1.mp3" type="audio/mpeg">
+                                Tu navegador no soporta el elemento audio.
+                            </audio>
+                        </div>
+                    </div>
+                    <div class="media-info">
+                        <h3 class="media-title">Tech Talk - Episodio 1</h3>
+                        <p class="media-description">Conversación sobre las últimas tendencias en tecnología</p>
+                        <div class="media-meta">
+                            <span class="media-category">Podcasts</span>
+                            <span>25:15 min</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media-card" data-category="efectos">
+                    <div class="media-content">
+                        <div class="audio-player">
+                            <div class="audio-icon">🔊</div>
+                            <div class="audio-title">Sonidos de la Naturaleza</div>
+                            <audio class="audio-controls" controls>
+                                <source src="/assets/audios/naturaleza1.mp3" type="audio/mpeg">
+                                Tu navegador no soporta el elemento audio.
+                            </audio>
+                        </div>
+                    </div>
+                    <div class="media-info">
+                        <h3 class="media-title">Sonidos de la Naturaleza</h3>
+                        <p class="media-description">Grabación de alta calidad de sonidos del bosque</p>
+                        <div class="media-meta">
+                            <span class="media-category">Efectos</span>
+                            <span>10:00 min</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para vista ampliada -->
+    <div class="modal" id="media-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Título del medio</h3>
+                <button class="modal-close" id="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="modal-media-container"></div>
+                <p id="modal-description"></p>
+            </div>
+        </div>
+    </div>
+
+    
+    <footer class="bg-gray-800 text-white py-8 mt-1">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Mi-proyecto-web Todos los derechos reservados.</p>
+            <div class="mt-1 flex justify-center space-x-4">
+                <a href="#" class="hover:text-accent transition duration-300"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-accent transition duration-300"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-accent transition duration-300"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+ 
+    <script>
+        // menu de mobil y submenu
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const mobileSubmenuButton = document.querySelector('.mobile-submenu-button');
+        const mobileSubmenu = document.querySelector('.mobile-submenu');
+        mobileSubmenuButton.addEventListener('click', () => {
+            mobileSubmenu.classList.toggle('hidden');
+        });
+
+        const buttompracticadropdown = document.getElementById('buttompracticadropdown');
+        const menupracticas = document.getElementById('menupracticas');
+        let ispracticasactive = false;
+
+        buttompracticadropdown.addEventListener('click', (e) => {
+            e.preventDefault();
+            ispracticasactive = !ispracticasactive;
+            menupracticas.classList.toggle('hidden');
+            buttompracticadropdown.classList.toggle('text-blue-500');
+            buttompracticadropdown.classList.toggle('bg-gray-100');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!buttompracticadropdown.contains(e.target) && !menupracticas.contains(e.target)) {
+                menupracticas.classList.add('hidden');
+                buttompracticadropdown.classList.remove('text-blue-500', 'bg-gray-100');
+                ispracticasactive = false;
+            }
+        });
+
+    
+  </script>
+    <script>
+        // Variables globales
+        let currentTab = 'images';
+
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', function() {
+            setupEventListeners();
+        });
+
+        function setupEventListeners() {
+            // Pestañas principales
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const tab = this.dataset.tab;
+                    switchTab(tab);
+                });
+            });
+
+            // Filtros
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filter = this.dataset.filter;
+                    const section = this.closest('.content-section');
+                    filterMedia(section, filter);
+                    
+                    // Actualizar botones activos
+                    section.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Elementos multimedia
+            const mediaCards = document.querySelectorAll('.media-card');
+            mediaCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    openMediaModal(this);
+                });
+            });
+
+            // Botones de reproducción de video
+            const playButtons = document.querySelectorAll('.play-button');
+            playButtons.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const video = this.closest('.media-content').querySelector('video');
+                    if (video.paused) {
+                        video.play();
+                        this.innerHTML = '⏸';
+                    } else {
+                        video.pause();
+                        this.innerHTML = '▶';
+                    }
+                });
+            });
+
+            // Modal
+            document.getElementById('modal-close').addEventListener('click', closeModal);
+            document.getElementById('media-modal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
+
+            // Navegación con teclado
+            document.addEventListener('keydown', function(e) {
+                if (document.getElementById('media-modal').style.display === 'block') {
+                    if (e.key === 'Escape') {
+                        closeModal();
+                    }
+                }
+            });
+        }
+
+        function switchTab(tabName) {
+            // Actualizar botones de pestaña
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+
+            // Mostrar sección correspondiente
+            showTab(tabName);
+            currentTab = tabName;
+        }
+
+        function showTab(tabName) {
+            // Ocultar todas las secciones
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Mostrar sección activa
+            document.getElementById(`${tabName}-section`).classList.add('active');
+        }
+
+        function filterMedia(section, filter) {
+            const mediaCards = section.querySelectorAll('.media-card');
+            
+            mediaCards.forEach(card => {
+                const category = card.dataset.category;
+                if (filter === 'all' || category === filter) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function openMediaModal(mediaCard) {
+            const modal = document.getElementById('media-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDescription = document.getElementById('modal-description');
+            const modalMediaContainer = document.getElementById('modal-media-container');
+
+            // Obtener información del elemento
+            const title = mediaCard.querySelector('.media-title').textContent;
+            const description = mediaCard.querySelector('.media-description').textContent;
+            
+            // Limpiar contenedor
+            modalMediaContainer.innerHTML = '';
+
+            // Determinar tipo de media y crear elemento apropiado
+            const img = mediaCard.querySelector('img');
+            const video = mediaCard.querySelector('video');
+            const audio = mediaCard.querySelector('audio');
+
+            if (img && !video) {
+                // Es una imagen
+                const modalImg = document.createElement('img');
+                modalImg.src = img.src;
+                modalImg.alt = img.alt;
+                modalImg.className = 'modal-media';
+                modalMediaContainer.appendChild(modalImg);
+            } else if (video) {
+                // Es un video
+                const modalVideo = document.createElement('video');
+                modalVideo.src = video.querySelector('source').src;
+                modalVideo.controls = true;
+                modalVideo.className = 'modal-media';
+                modalMediaContainer.appendChild(modalVideo);
+            } else if (audio) {
+                // Es un audio
+                const audioPlayer = document.createElement('div');
+                audioPlayer.className = 'audio-player';
+                audioPlayer.innerHTML = `
+                    <div class="audio-icon">🎵</div>
+                    <div class="audio-title">${title}</div>
+                    <audio class="audio-controls" controls>
+                        <source src="${audio.querySelector('source').src}" type="audio/mpeg">
+                    </audio>
+                `;
+                modalMediaContainer.appendChild(audioPlayer);
+            }
+
+            // Establecer información
+            modalTitle.textContent = title;
+            modalDescription.textContent = description;
+
+            // Mostrar modal
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('media-modal');
+            modal.style.display = 'none';
+
+            // Pausar cualquier media que esté reproduciéndose
+            const modalVideo = modal.querySelector('video');
+            const modalAudio = modal.querySelector('audio');
+            
+            if (modalVideo) modalVideo.pause();
+            if (modalAudio) modalAudio.pause();
+        }
+    </script>
+
+</body>
+</html>

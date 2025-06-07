@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi-proyecto-web</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <!-- exportar boxicons -->
+    <link
+      href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body class="bg-gray-100">
+    <!-- - Header con navegación hacia todas las páginas -->
+    <header
+      class="bg-gradient-to-r from-[#0040ff] to-white p-4 sticky top-0 z-50"
+    >
+      <!-- menu de navegacion -->
+      <nav class="bg-white shadow-lg bg-white">
+        <div class="max-w-8xl mr-2 px-6">
+          <div class="flex justify-between">
+            <div class="flex">
+              <div>
+                <a href="index.html" class="flex items-center py-4">
+                  <span class="font-semibold text-gray-500 text-lg">
+                    <h1 class="text-1xl font-bold text-black">
+                      Mi Portafolio Web
+                    </h1>
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <!-- imagen de el logo de la martin lutero -->
+            <a
+              href="https://ocotal.uml.edu.ni"
+              class="img_nav"
+              title="Universidad Martin Lutero"
+            >
+              <img src="./assets/svg/DW.png" alt="" />
+            </a>
+            <!-- menu de vista en pc o pantallas grandes -->
+            <div class="hidden md:flex items-center">
+              <a
+                href="index.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300"
+                >Inicio</a
+              >
+              <div class="relative group">
+                <!-- boton desplegable para visualisar todas las practicas -->
+                <button
+                  id="buttompracticadropdown"
+                  class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300"
+                >
+                  Practicas
+                  <svg
+                    class="h-4 w-4 inline-block ml-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
+                </button>
+                <div
+                  id="menupracticas"
+                  class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden"
+                >
+                  <a
+                    href="/pages/formularios.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >Formularios</a
+                  >
+                  <a
+                    href="/pages/listas.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >Listas</a
+                  >
+                  <a
+                    href="/pages/tablas.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >Tablas</a
+                  >
+                  <a
+                    href="/pages/semantica.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >Semantica</a
+                  >
+                  <a
+                    href="/pages/multimedia.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >Multimedia</a
+                  >
+                </div>
+              </div>
+              <a
+                href="/pages/contacto.html"
+                class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300"
+                >Contacto</a
+              >
+            </div>
+            <!-- menu de vista mobil -->
+
+            <!-- boton de despliege para ver el menu movil -->
+            <div class="md:hidden flex items-center">
+              <button class="mobile-menu-button">
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="mobile-menu hidden md:hidden">
+          <a href="index.html" class="block py-2 px-4 text-sm hover:bg-gray-200"
+            >Inicio</a
+          >
+          <div class="relative group">
+            <!-- boton desplegable para visualisar todas las practicas -->
+            <button
+              class="mobile-submenu-button w-full text-left block py-2 px-4 text-sm hover:bg-gray-200"
+            >
+              Practicas
+              <svg
+                class="h-4 w-4 inline-block ml-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div class="mobile-submenu hidden bg-gray-100">
+              <a
+                href="/pages/formularios.html"
+                class="block py-2 px-4 text-sm hover:bg-gray-200"
+                >Formularios</a
+              >
+              <a
+                href="/pages/listas.html"
+                class="block py-2 px-4 text-sm hover:bg-gray-200"
+                >Listas</a
+              >
+              <a
+                href="/pages/tablas.html"
+                class="block py-2 px-4 text-sm hover:bg-gray-200"
+                >Tablas</a
+              >
+              <a
+                href="/pages/semantica.html"
+                class="block py-2 px-4 text-sm hover:bg-gray-200"
+                >Semantica</a
+              >
+              <a
+                href="/pages/multimedia.html"
+                class="block py-2 px-4 text-sm hover:bg-gray-200"
+                >Multimedia</a
+              >
+            </div>
+          </div>
+          <a
+            href="/pages/contacto.html"
+            class="block py-2 px-4 text-sm hover:bg-gray-200"
+            >Contacto</a
+          >
+        </div>
+      </nav>
+    </header>
+    <main>
+        <!-- tabla de estudiantes -->
+        <div class=" container_list">
+          <h1 class="text-2xl text-center font-bold mb-4">Tabla de Estudiantes</h1>
+          <table class="container_list_table bg-white mx-auto border border-gray-200">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="py-2 px-2 border-b">Nombre</th>
+                <th class="py-2 px-2 border-b">Edad</th>
+                <th class="py-2 px-2 border-b">Carrera</th>
+                <th class="py-2 px-2 border-b">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="py-2 px-4 border-b">Juan Pérez</td>
+                <td class="py-2 px-4 border-b">20</td>
+                <td class="py-2 px-4 border-b">Ingeniería de Sistemas</td>
+                <td class="py-2 px-4 border-b">
+                  <button
+                    class="text-blue-500 hover:underline"
+                    onclick="alert('Editar Juan Pérez')"
+                  >
+                    Editar
+                  </button>
+                  |
+                  <button
+                    class="text-red-500 hover:underline"
+                    onclick="alert('Eliminar Juan Pérez')"
+                  >
+                    Eliminar
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 border-b">Ana Gómez</td>
+                <td class="py-2 px-4 border-b">22</td>
+                <td class="py-2 px-4 border-b">Administración de Empresas</td>
+                <td class="py-2 px-4 border-b">
+                  <button
+                    class="text-blue-500 hover:underline"
+                    onclick="alert('Editar Ana Gómez')"
+                  >
+                    Editar
+                  </button>
+                  |
+                  <button
+                    class="text-red-500 hover:underline"
+                    onclick="alert('Eliminar Ana Gómez')"
+                  >
+                    Eliminar
+                  </button>
+                </td>
+              </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Carlos López</td>
+                    <td class="py-2 px-4 border-b">21</td>
+                    <td class="py-2 px-4 border-b">Diseño Gráfico</td>
+                    <td class="py-2 px-4 border-b">
+                    <button
+                        class="text-blue-500 hover:underline"
+                        onclick="alert('Editar Carlos López')"
+                    >
+                        Editar
+                    </button>
+                    |
+                    <button
+                        class="text-red-500 hover:underline"
+                        onclick="alert('Eliminar Carlos López')"
+                    >
+                        Eliminar
+                    </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">María Fernández</td>
+                    <td class="py-2 px-4 border-b">23</td>
+                    <td class="py-2 px-4 border-b">Psicología</td>
+                    <td class="py-2 px-4 border-b">
+                    <button
+                        class="text-blue-500 hover:underline"
+                        onclick="alert('Editar María Fernández')"
+                    >
+                        Editar
+                    </button>
+                    |
+                    <button
+                        class="text-red-500 hover:underline"
+                        onclick="alert('Eliminar María Fernández')"
+                    >
+                        Eliminar
+                    </button>
+                    </td>
+
+                </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- tabla maestros -->
+        <div class="container_list">
+          <h1 class="text-2xl text-center font-bold mb-4">Tabla de Maestros</h1>
+          <table class="container_list_table bg-white mx-auto border border-gray-200">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="py-2 px-2 border-b">Nombre</th>
+                <th class="py-2 px-2 border-b">Edad</th>
+                <th class="py-2 px-2 border-b">Materia</th>
+                <th class="py-2 px-2 border-b">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="py-2 px-4 border-b">Dr. Luis Martínez</td>
+                <td class="py-2 px-4 border-b">45</td>
+                <td class="py-2 px-4 border-b">Matemáticas</td>
+                <td class="py-2 px-4 border-b">
+                  <button
+                    class="text-blue-500 hover:underline"
+                    onclick="alert('Editar Dr. Luis Martínez')"
+                  >
+                    Editar
+                  </button>
+                  |
+                  <button
+                    class="text-red-500 hover:underline"
+                    onclick="alert('Eliminar Dr. Luis Martínez')"
+                  >
+                    Eliminar
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 border-b">Lic. Ana Torres</td>
+                <td class="py-2 px-4 border-b">38</td>
+                <td class="py-2 px-4 border-b">Historia</td>
+                <td class="py-2 px-4 border-b">
+                  <button
+                    class="text-blue-500 hover:underline"
+                    onclick="alert('Editar Lic. Ana Torres')"
+                  >
+                    Editar
+                  </button>
+                  |
+                  <button
+                    class="text-red-500 hover:underline"
+                    onclick="alert('Eliminar Lic. Ana Torres')"
+                  >
+                    Eliminar
+                  </button>
+                </td>
+              </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Ing. Carlos López</td>
+                    <td class="py-2 px-4 border-b">30</td>
+                    <td class="py-2 px-4 border-b">Programación</td>
+                    <td class="py-2 px-4 border-b">
+                    <button
+                        class="text-blue-500 hover:underline"
+                        onclick="alert('Editar Ing. Carlos López')"
+                    >
+                        Editar
+                    </button>
+                    |
+                    <button
+                        class="text-red-500 hover:underline"
+                        onclick="alert('Eliminar Ing. Carlos López')"
+                    >
+                        Eliminar
+                    </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Dra. María Fernández</td>
+                    <td class="py-2 px-4 border-b">50</td>
+                    <td class="py-2 px-4 border-b">Psicología</td>
+                    <td class="py-2 px-4 border-b">
+                    <button
+                        class="text-blue-500 hover:underline"
+                        onclick="alert('Editar Dra. María Fernández')"
+                    >
+                        Editar
+                    </button>
+                    |
+                    <button
+                        class="text-red-500 hover:underline"
+                        onclick="alert('Eliminar Dra. María Fernández')"
+                    >
+                        Eliminar
+                    </button>
+                    </td>
+            </tbody>
+          </table>
+        </div>
+        <!-- tabla clases -->
+        <div class="container_list">
+          <h1 class="text-2xl text-center font-bold mb-4">Tabla de Clases</h1>
+          <table class="container_list_table bg-white mx-auto border border-gray-200">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="py-2 px-2 border-b">Clase</th>
+                <th class="py-2 px-2 border-b">Horario</th>
+                <th class="py-2 px-2 border-b">Profesor</th>
+                <th class="py-2 px-2 border-b">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="py-2 px-4 border-b">Matemáticas Avanzadas</td>
+                <td class="py-2 px-4 border-b">Lunes y Miércoles 10:00 - 11:30</td>
+                <td class="py-2 px-4 border-b">Dr. Luis Martínez</td>
+                <td class="py-2 px-4 border-b">
+                  <button
+                    class="text-blue-500 hover:underline"
+                    onclick="alert('Editar Matemáticas Avanzadas')"
+                  >
+                    Editar
+                  </button>
+                  |
+                  <button
+                    class="text-red-500 hover:underline"
+                    onclick="alert('Eliminar Matemáticas Avanzadas')"
+                  >
+                    Eliminar
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="py-2 px-4 border-b">Historia Universal</td>
+                <td class="py-2 px-4 border-b">Martes y Jueves 9:00 - 10:30</td>
+                <td class="py-2 px-4 border-b">Lic. Ana Torres</td>
+                <td class="py-2 px-4 border-b">
+                  <button
+                    class="text-blue-500 hover:underline"
+                    onclick="alert('Editar Historia Universal')"
+                  >
+                    Editar
+                  </button>
+                  |
+                  <button
+                    class="text-red-500 hover:underline"
+                    onclick="alert('Eliminar Historia Universal')"
+                  >
+                    Eliminar
+                  </button>
+                </td>
+              </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Programación Web</td>
+                    <td class="py-2 px-4 border-b">Viernes 14:00 - 16:00</td>
+                    <td class="py-2 px-4 border-b">Ing. Carlos López</td>
+                    <td class="py-2 px-4 border-b">
+                    <button
+                        class="text-blue-500 hover:underline"
+                        onclick="alert('Editar Programación Web')"
+                    >
+                        Editar
+                    </button>
+                    |
+                    <button
+                        class="text-red-500 hover:underline"
+                        onclick="alert('Eliminar Programación Web')"
+                    >
+                        Eliminar
+                    </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="py-2 px-4 border-b">Psicología Infantil</td>
+                    <td class="py-2 px-4 border-b">Lunes y Miércoles 11:00 - 12:30</td>
+                    <td class="py-2 px-4 border-b">Dra. María Fernández</td>
+                    <td class="py-2 px-4 border-b">
+                    <button
+                        class="text-blue-500 hover:underline"
+                        onclick="alert('Editar Psicología Infantil')"
+                    >
+                        Editar
+                    </button>
+                    |
+                    <button
+                        class="text-red-500 hover:underline"
+                        onclick="alert('Eliminar Psicología Infantil')"
+                    >
+                        Eliminar
+                    </button>
+                    </td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+
+    </main>
+    <footer class="bg-gray-800 text-white py-8">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2025 Mi-proyecto-web Todos los derechos reservados.</p>
+        <div class="mt-1 flex justify-center space-x-4">
+          <a href="#" class="hover:text-accent transition duration-300"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="#" class="hover:text-accent transition duration-300"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="#" class="hover:text-accent transition duration-300"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+    <!-- scripts de menus desplegables -->
+    <script>
+      // menu de mobil y submenu
+      const mobileMenuButton = document.querySelector(".mobile-menu-button");
+      const mobileMenu = document.querySelector(".mobile-menu");
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      const mobileSubmenuButton = document.querySelector(
+        ".mobile-submenu-button"
+      );
+      const mobileSubmenu = document.querySelector(".mobile-submenu");
+      mobileSubmenuButton.addEventListener("click", () => {
+        mobileSubmenu.classList.toggle("hidden");
+      });
+
+      const buttompracticadropdown = document.getElementById(
+        "buttompracticadropdown"
+      );
+      const menupracticas = document.getElementById("menupracticas");
+      let ispracticasactive = false;
+
+      buttompracticadropdown.addEventListener("click", (e) => {
+        e.preventDefault();
+        ispracticasactive = !ispracticasactive;
+        menupracticas.classList.toggle("hidden");
+        buttompracticadropdown.classList.toggle("text-blue-500");
+        buttompracticadropdown.classList.toggle("bg-gray-100");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (
+          !buttompracticadropdown.contains(e.target) &&
+          !menupracticas.contains(e.target)
+        ) {
+          menupracticas.classList.add("hidden");
+          buttompracticadropdown.classList.remove(
+            "text-blue-500",
+            "bg-gray-100"
+          );
+          ispracticasactive = false;
+        }
+      });
+    </script>
+  </body>
+</html>
