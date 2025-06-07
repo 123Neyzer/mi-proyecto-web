@@ -18,7 +18,8 @@
       href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="/styles/main.css"/>
+   
   </head>
   <body class="bg-gray-100">
     <!-- - Header con navegación hacia todas las páginas -->
@@ -47,7 +48,7 @@
               class="img_nav"
               title="Universidad Martin Lutero"
             >
-              <img src="./assets/svg/DW.png" alt="" />
+              <img src="../assets/svg/DW.png" alt="" />
             </a>
             <!-- menu de vista en pc o pantallas grandes -->
             <div class="hidden md:flex items-center">
@@ -97,11 +98,7 @@
                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >Tablas</a
                   >
-                  <a
-                    href="/pages/semantica.html"
-                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    >Semantica</a
-                  >
+                 
                   <a
                     href="/pages/multimedia.html"
                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -179,11 +176,7 @@
                 class="block py-2 px-4 text-sm hover:bg-gray-200"
                 >Tablas</a
               >
-              <a
-                href="/pages/semantica.html"
-                class="block py-2 px-4 text-sm hover:bg-gray-200"
-                >Semantica</a
-              >
+              
               <a
                 href="/pages/multimedia.html"
                 class="block py-2 px-4 text-sm hover:bg-gray-200"
@@ -233,11 +226,7 @@
             </div>
             <div class="welcome_box py-8">
               <div class="hidden sm:mb-8 sm:flex sm:justify-center">
-                <div
-                  class="relative rounded-full bg- px-3 py-1 text-sm/6 text-white ring-1 ring-white/120 hover:bg-[#DAA520] ring-white/50"
-                >
-                  mi portafolio web.
-                </div>
+                
               </div>
               <div class="text-center">
                 <h1 class="welcome_text_title">
@@ -303,8 +292,7 @@
                   <h2 class="font-bold mb-4">mi proyecto web personal</h2>
                   <p class="mb-6">
                     En esta pagina encontraras mi portfolio web, donde almaceno
-                    mis formularios, listas, tablas, multimedia, semantica entre
-                    otras cosas <br />
+                    mis formularios, listas, tablas y multimedia  <br />
                     te invito a hecharles un vistaso
                   </p>
                   <a href="/pages/practicas.html" class="carusel_buttom"
@@ -333,10 +321,11 @@
       </section>
 
       <!-- section de botones de redireccion hacia las practicas -->
-      <section class="mb-12 text-center section_practicas">
         <h2 class="text-3xl font-bold text-center m-6">Practicas</h2>
+      <section class="mb-12 section_practicas">
+       
 
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div class="grid grid-cols-2 md:grid-cols-4  gap-4">
           <a
             href="/pages/formularios.html"
             class="bg-white rounded-lg shadow-md p-4 text-center hover:shadow-xl transition duration-300"
@@ -358,15 +347,9 @@
             <i class="bxr text-4xl bx-table-list"></i>
             <h3 class="font-semibold">Tablas</h3>
           </a>
+         
           <a
-            href="/pages/semantica.html"
-            class="bg-white rounded-lg shadow-md p-4 text-center hover:shadow-xl transition duration-300"
-          >
-            <i class="bxr text-4xl bx-component"></i>
-            <h3 class="font-semibold">Semantica</h3>
-          </a>
-          <a
-            href="/pages/multimedia.html"
+            href="./pages/multimedia.html"
             class="bg-white rounded-lg shadow-md p-4 text-center hover:shadow-xl transition duration-300"
           >
             <i class="bxr text-4xl bx-play-circle"></i>
@@ -391,6 +374,7 @@
         </div>
       </div>
     </footer>
+    
     <!-- scripts de carrusel -->
     <script>
       var heroSwiper = new Swiper(".heroSwiper", {
